@@ -11,7 +11,13 @@ client.on('ready', () => {
 client.login(process.env.DISCORD_TOKEN);
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
+  if (msg.content === 'waffles') {
+    msg.reply('Thats not my name, faggot.');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'fuzzy') {
+    msg.reply('https://media.discordapp.net/attachments/975702812371595294/996780648389955634/caption.gif');
   }
 });
