@@ -11,7 +11,7 @@ client.login(process.env.DISCORD_TOKEN);
 
 client.on('message', msg => {
 const replies = ['fuck you', 'kill yourself', 'i hope you catch zika'];
-  if (msg.content === '!waffles'){
+  if (msg.content === 'waffles'){
     const index = Math.floor(Math.random() * replies.length);
       msg.channel.send(replies[index]);
     }
@@ -25,7 +25,14 @@ client.on('message', msg => {
 );
 
 client.on('message', msg => {
-  if (msg.content === '!CCZ') {
+  if (msg.content === 'hey') {
+    msg.channel.send('Hey.');
+    }
+  }
+);
+
+client.on('message', msg => {
+  if (msg.content === '!ccz') {
     msg.channel.send('https://cdn.discordapp.com/attachments/352583242060136448/1004095255290843166/IUZCIWrd3ROUBtMm.mov');
     }
   }
@@ -65,23 +72,53 @@ client.on('message', msg => {
 client.on('message', (msg) => {
  if (msg.content.startsWith('!8ball')) {
   const eightball = [
-   'maybe if you grew some balls',
+   'maybe if you grew some balls.',
    'fuck off.',
    'ask a better question you retard.',
    'hell fucking no.',
    'perchance.',
-   'only if you give me some dome',
-   'no shit you dumbass',
-   'im gonna rape you if you ask another head ass question like that again',
-   'ask me later im jelqing',
-   'ask your mom and dad after Im done raping them',
-   'im not awnsering that fruity ass question',
+   'only if you give me some dome.',
+   'no shit you dumbass.',
+   'im gonna rape you if you ask another head ass question like that again.',
+   'ask me later im jelqing.',
+   'ask your mom and dad after Im done raping them.',
+   'im not awnsering that fruity ass question.',
+   'im gonna call you a nigger if you ask that again. (1 in 20 chance)',
+   'Nigger.',
+   'answer this ratio storm.',
+   'when the real koopy pulls some bitches maybe.',
+   'mfw too suicidal to fall sleep but too tired to actually do anything.',
+   'im getting bored of your shitty one liners.',
+   'ask Quick Access instead.',
+   'http://storage.windows97.space/TheKoopyKonglomerate/SONY/AIBO/video/Piroppo/Piroppo%20Ep21.mp4',
+   'only when whatman drops the panooki drawing.',
+   '* FATAL ERROR * TOO MANY BITCHLESS NIGGAS ASKING ME QUESTIONS',
    ];
 
    const response = eightball[Math.floor(Math.random() * eightball.length)];
    msg.channel.send(response);
   }
  });
+ client.on('message', (msg) => {
+  if (msg.content.startsWith('!rate')) {
+   const rating = [
+      '0',
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      '10',
+    ];
+
+    const response = rating[Math.floor(Math.random() * rating.length)];
+    msg.channel.send(response);
+   }
+  });
 
 client.on('message', (msg) => {
  if (msg.content.startsWith('!aibo')) {
