@@ -2,6 +2,7 @@
 require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
+require('events').EventEmitter.defaultMaxListeners = 20;
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}! Lets make some noise <3`);
@@ -10,7 +11,7 @@ client.on('ready', () => {
 client.login(process.env.DISCORD_TOKEN);
 
 client.on('message', msg => {
-const replies = ['fuck you', 'kill yourself', 'i hope you catch zika'];
+const replies = ['fuck you', 'kill yourself', 'i hope you catch zika','mommy','you make me want to drink goonbags','use me.',];
   if (msg.content === 'waffles'){
     const index = Math.floor(Math.random() * replies.length);
       msg.channel.send(replies[index]);
@@ -21,23 +22,43 @@ client.on('message', msg => {
   if (msg.content === '!fuzzy') {
     msg.channel.send('https://media.discordapp.net/attachments/975702812371595294/996780648389955634/caption.gif');
     }
-  }
-);
+});
+
+client.on('message', msg => {
+  if (msg.content === '!punish') {
+    msg.channel.send("I'm sorry.");
+    }
+});
+
+client.on('message', msg => {
+  if (msg.content === '!abscond') {
+    msg.channel.send("IM SORRY NIGGA DAMN.");
+    }
+});
+
+client.on('message', msg => {
+  if (msg.content === '!koopy') {
+    msg.channel.send('https://pbs.twimg.com/media/FWyFkPEX0AEM9Tc.jpg');
+    }
+});
+
+client.on('message', msg => {
+  if (msg.content === '!kilo') {
+    msg.channel.send('https://media.discordapp.net/attachments/975645124065386519/1004297360941264906/IMG_4919.jpg?width=473&height=473');
+    }
+});
 
 client.on('message', msg => {
   if (msg.content === 'hey') {
     msg.channel.send('Hey.');
     }
-  }
-);
+});
 
 client.on('message', msg => {
   if (msg.content === '!ccz') {
     msg.channel.send('https://cdn.discordapp.com/attachments/352583242060136448/1004095255290843166/IUZCIWrd3ROUBtMm.mov');
     }
-  }
-);
-
+});
 
 client.on('message', msg => {
   if (msg.content === '!rancho') {
@@ -93,12 +114,14 @@ client.on('message', (msg) => {
    'http://storage.windows97.space/TheKoopyKonglomerate/SONY/AIBO/video/Piroppo/Piroppo%20Ep21.mp4',
    'only when whatman drops the panooki drawing.',
    '* FATAL ERROR * TOO MANY BITCHLESS NIGGAS ASKING ME QUESTIONS',
+   '27 year old black autistic males with nsfw twitters ask better questions.',
+   'use me.',
    ];
-
    const response = eightball[Math.floor(Math.random() * eightball.length)];
    msg.channel.send(response);
   }
  });
+
  client.on('message', (msg) => {
   if (msg.content.startsWith('!rate')) {
    const rating = [
@@ -114,7 +137,6 @@ client.on('message', (msg) => {
       '9',
       '10',
     ];
-
     const response = rating[Math.floor(Math.random() * rating.length)];
     msg.channel.send(response);
    }
@@ -164,8 +186,18 @@ client.on('message', (msg) => {
     'http://storage.windows97.space/TheKoopyKonglomerate/SONY/AIBO/images/ERS-210/aibo-advertising-mini-disc-3.jpg',
     'http://storage.windows97.space/TheKoopyKonglomerate/SONY/AIBO/images/ERS-210/aibo-advertising-wega-theatre.jpg',
    ];
-
   const response = aibo[Math.floor(Math.random() * aibo.length)];
   msg.channel.send(response);
  }
 });
+
+//check current machines ram usage and send that to the terminal
+var os = require('os');
+
+var usedMemory = os.totalmem() -os.freemem(), totalMemory = os.totalmem();
+
+var  getpercentage =
+  ((usedMemory/totalMemory) * 100).toFixed(2) + '%'
+
+console.log("Memory used in GB", (usedMemory/ Math.pow(1024, 3)).toFixed(2))
+console.log("Used memory" , getpercentage);
