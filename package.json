@@ -1,8 +1,9 @@
 {
+  "type": "module",
   "name": "robo-koopy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.5.3",
+    "@discordjs/rest": "^1.0.1",
+    "discord.js": "^14.1.2",
     "dotenv": "^16.0.1"
   }
 }
